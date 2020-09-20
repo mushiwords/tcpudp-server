@@ -14,17 +14,14 @@ func main() {
 
 	ts := server.NewTCP("localhost:9999")
 	ts.OnNewClient(func(c *server.TCPClient) {
-		fmt.Println("new client connected.")
 		mylog.LogDebug("New client connected: %s", c.Conn().RemoteAddr().String())
 	})
 	ts.OnNewMessage(func(c *server.TCPClient, m string) {
 		fmt.Printf("recieve message: %s", m)
 		if err := c.Send(m); err != nil {
 			mylog.LogError("send message failed: %v", err)
-			fmt.Printf("send message failed: %s", err)
 		} else {
 			mylog.LogDebug("send message success: %s", m)
-			fmt.Printf("send message success: %s", m)
 		}
 	})
 	go func() {

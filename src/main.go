@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sync"
 
-	"tcpudp-server/comm/mylog"
-	"tcpudp-server/server"
+	"tcpudp-server/src/comm/mylog"
+	"tcpudp-server/src/server"
 )
 
 func main() {

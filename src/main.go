@@ -15,7 +15,7 @@ func main() {
 
 	var wg sync.WaitGroup
 
-	ts := server.NewTCP("localhost:9999")
+	ts := server.NewTCP("127.0.0.1:9999")
 	ts.OnNewClient(func(c *server.TCPClient) {
 		mylog.LogDebug("New client connected: %s", c.Conn().RemoteAddr().String())
 	})
@@ -33,7 +33,7 @@ func main() {
 		ts.Listen()
 	}()
 
-	us := server.NewUDP("localhost:6666", 1024)
+	us := server.NewUDP("127.0.0.1:6666", 1024)
 	go func() {
 		fmt.Printf("start udp server [:6666] success \n")
 

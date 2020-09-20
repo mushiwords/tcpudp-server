@@ -100,7 +100,7 @@ func (t *udpserver) writer() {
 	)
 	for v = range t.ChWrite {
 		_, err = t.conn.WriteToUDP(v.Pack, v.Addr)
-		mylog.LogDebug("read from: %s", string(v.Pack))
+		mylog.LogDebug("write to: %s", string(v.Pack))
 		if err != nil {
 			mylog.LogError("write package error: %w", err)
 		}

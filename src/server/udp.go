@@ -4,7 +4,7 @@ import (
 	"net"
 	"runtime"
 
-	"tcpudp-server/comm/mylog"
+	"tcpudp-server/src/comm/mylog"
 )
 
 /************************************************************
